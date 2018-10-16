@@ -1,12 +1,13 @@
 # Trabajar con una API real
 
-Ahora es el momento de trabajar en serio con una API. Puede llegar a ser muy aburrido trabajar solamente con datos estáticos.
+Ahora es el momento de trabajar en serio con una API y pasar de los datos estáticos.
 
-Si no estás familiarizado con el concepto de API, te recomiendo leer [mi viaje donde llegué a conocer el mundo de las APIs](https://www.robinwieruch.de/what-is-an-api-javascript/).
+Si no estás familiarizado con el concepto de API, te recomiendo leer [mi artículo sobre cómo llegué a conocer el mundo de las APIs](https://www.robinwieruch.de/what-is-an-api-javascript/).
 
 
-¿Conoces la plataforma [Hacker News](https://news.ycombinator.com/)? Es un acumulador de noticias sobre tecnología. En este libro utilizaremos la API de Hacker News para obtener las últimas noticias. Es una API [básica](https://github.com/HackerNews/API) de [búsqueda](https://hn.algolia.com/api) donde podremos conseguir noticias, esto ultimo nos concierne para alimentar nuestra aplicación. 
-Puedes visitar la información de la API en cualquier momento y de esa forma, obtener un mejor conocimiento de la estructura de los datos.
+Para nuestra primera aproximación, usaremos la plataforma [Hacker News](https://news.ycombinator.com/), un concentrador de noticias sobre tecnología. En este ejercicio utilizaremos la API de Hacker News para obtener las últimas noticias. Hay APIs [básicas](https://github.com/HackerNews/API) de [búsqueda](https://hn.algolia.com/api) para conseguir noticias de la plataforma.La de búsqueda tiene más sentido para nuestra aplicación, pues queremos buscar historias de Hacker News.
+
+Puedes visitar la información de la API en cualquier momento para obtener un mejor conocimiento de la estructura de los datos.
 
 
 ## Métodos del ciclo de vida
