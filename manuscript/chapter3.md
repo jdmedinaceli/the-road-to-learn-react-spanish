@@ -28,21 +28,21 @@ En general, el proceso de montaje tiene 4 métodos de ciclo de vida. Se invocan 
 * render()
 * componentDidMount()
 
-Pero, ¿qué pasa con la actualización del ciclo de vida de un componente que ocurre cuando el estado o las propiedades cambian? En general, tiene 5 métodos de ciclo de vida en el siguiente orden:
+Para actualizar el ciclo de vida de un componente cuando cambian sus propiedades o estado hay 5 métodos de ciclo de vida, en el siguiente orden:
 
-* componentWillReceiveProps()
+* getDerivedStateFromProps()
 * shouldComponentUpdate()
-* componentWillUpdate()
 * render()
+* getSnapshotBeforeUpdate()
 * componentDidUpdate()
 
-Por último, pero no menos importante, está el desmontaje del ciclo de vida. Sólo tiene un método de ciclo de vida: `componentWillUnmount()`.
+Por último está el desmontaje del ciclo de vida. Sólo tiene un método de ciclo de vida: `componentWillUnmount()`.
 
-No es necesario conocer todos estos métodos de ciclo de vida desde el principio. Puede ser intimidante, pero no usarás todos - incluso en una aplicación React madura. Sin embargo, es bueno saber que cada método del ciclo de vida se puede usar en casos particulares:
+No es necesario conocer todos estos métodos de ciclo de vida desde el principio, e incluso en una aplicación React grande sólo usarás unos pocos además de los métodos `constructor()` y `render()`. Sin embargo, es bueno saber que cada método del ciclo de vida puede ser usado para propósitos específicos:
 
 * **constructor(props)** - Se llama cuando el componente se inicializa. Puedes establecer un estado inicial del componente y vincular métodos de clase útiles durante ese método de ciclo de vida.
 
-* **componentWillMount()** - Se llama antes del método del `render()`. Es por eso que podría ser utilizado para establecer el estado del componente interno, porque no activará una segunda renderización del componente. Generalmente se recomienda utilizar el `constructor()` para establecer el estado inicial.
+* **static getDerivedStateFromProps(props, state)** - Se llama antes del `render()`, tanto en el montaje inicial como en las actualizaciones posteriores. Debería devolver un objeto para actualizar el estado o null para no actualizar nada. Existe para raras ocasiones en las que el estado depende de los cambios en las propiedades a lo largo del tiempo. Es importante saber que este es un método estático y que no tiene acceso a al instancia del componente.
 
 * **render()** - Este método del ciclo de vida es **obligatorio** y devuelve los elementos como una salida del componente. El método debe ser puro y por lo tanto no debe modificar el estado del componente. Recibe como entrada propiedades (props) y estados (state) y regresa un elemento.
 
